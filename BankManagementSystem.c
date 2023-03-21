@@ -40,6 +40,28 @@ void deposit(struct customer *customers, int count)
 >>>>>>> 8cbac77c19b15a0baaf3fb1396d938dd0c659249
 }
 
+    
+    
+void check_balance(struct customer *customers, int count)
+{
+    int account_number;
+    printf("Enter account number: ");
+    scanf("%d", &account_number);
+    for (int i = 0; i < count; i++)
+    {
+        if (customers[i].account_number == account_number)
+        {
+            printf("Account balance is %.2f\n", customers[i].balance);
+            return;
+        }
+    }
+    printf("Customer not found.\n");
+}
+    
+    
+    
+    
+
 
 int main(){
 
