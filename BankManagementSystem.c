@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
 struct customer
 {
@@ -6,7 +8,6 @@ struct customer
     int account_number;
     float balance;
 };
-
 
 void add_customer(struct customer *customers, int *count)
 {
@@ -19,10 +20,6 @@ void add_customer(struct customer *customers, int *count)
     (*count)++;
     printf("Customer added successfully!\n");
 }
-
-
-
-
 
 void deposit(struct customer *customers, int count)
 {
@@ -43,28 +40,6 @@ void deposit(struct customer *customers, int count)
     }
     printf("Customer not found.\n");
 }
-
-    
-    
-void check_balance(struct customer *customers, int count)
-{
-    int account_number;
-    printf("Enter account number: ");
-    scanf("%d", &account_number);
-    for (int i = 0; i < count; i++)
-    {
-        if (customers[i].account_number == account_number)
-        {
-            printf("Account balance is %.2f\n", customers[i].balance);
-            return;
-        }
-    }
-    printf("Customer not found.\n");
-}
-    
-    
-    
-    
 
 void withdraw(struct customer *customers, int count)
 {
@@ -93,6 +68,28 @@ void withdraw(struct customer *customers, int count)
     }
     printf("Customer not found.\n");
 }
+  
+void check_balance(struct customer *customers, int count)
+{
+    int account_number;
+    printf("Enter account number: ");
+    scanf("%d", &account_number);
+    for (int i = 0; i < count; i++)
+    {
+        if (customers[i].account_number == account_number)
+        {
+            printf("Account balance is %.2f\n", customers[i].balance);
+            return;
+        }
+    }
+    printf("Customer not found.\n");
+}
+    
+    
+    
+    
+
+
 
 
 
