@@ -85,7 +85,15 @@ void check_balance(struct customer *customers, int count)
     printf("Customer not found.\n");
 }
     
-    
+void view_customers(struct customer *customers, int count)
+{
+    printf("Customers:\n");
+    for (int i = 0; i < count; i++)
+    {
+        printf("%s (%d) - %.2f\n", customers[i].name, customers[i].account_number, customers[i].balance);
+    }
+}
+
     
     
 
